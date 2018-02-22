@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
@@ -53,6 +54,26 @@
         nav.navbar .container-fluid a:hover, nav.navbar .container-fluid a:active {
             color: #cccccc;
         }
+        .projects {
+            text-align: center;
+        }
+        .projects .thumbnail:hover {
+            background-color: #009688;
+        }
+        .projects .thumbnail:hover .caption {
+            color: #ffffff;
+        }
+        .projects .thumbnail:hover a {
+            text-decoration: none;
+        }
+        footer .fa {
+            color: #ffffff;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+        footer a:hover .fa {
+            color: #cccccc;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +82,7 @@
 <div class="container-fluid" id="body">
     <div class="row">
         <div class="col-sm-3" id="left-column">
-            <img src="/images/eu.png" class="img-responsive" style="width:100%" alt="Image">
+            <img src="images/eu.png" class="img-responsive" style="width:100%" alt="Image">
             <div class="portfolio-info container col-sm-12">
                 <p><span class="glyphicon glyphicon-user"></span> Gavrila Madalin</p>
                 <p><span class="glyphicon glyphicon-briefcase"></span> Web Developer</p>
@@ -137,10 +158,8 @@
 <footer class="container-fluid text-center">
     <p>Contact me on social media</p>
 
-    <a href=""><span class="glyphicon glyphicon-print"></span></a>
-    <a href=""><span class="glyphicon glyphicon-print"></span></a>
-    <a href=""><span class="glyphicon glyphicon-print"></span></a>
-    <a href=""><span class="glyphicon glyphicon-print"></span></a>
+    <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook-official"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
 
     <p>Madalin Gavrila</p>
 </footer>
