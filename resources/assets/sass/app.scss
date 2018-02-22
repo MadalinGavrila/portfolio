@@ -1,14 +1,77 @@
+/* Body tag */
+body {
+  background-color: #f1f1f1;
+}
 
-// Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+/* Body id */
+#body {
+  margin-top: 15px;
+}
 
-// Variables
-@import "variables";
+/* Navbar */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #009688;
+  border-color: #009688;
+}
+nav.navbar .container-fluid a:link, nav.navbar .container-fluid a:visited {
+  color: #ffffff;
+}
+nav.navbar .container-fluid a:hover, nav.navbar .container-fluid a:active {
+  color: #cccccc;
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+/* Footer */
+footer {
+  background-color: #009688;
+  padding: 25px;
+  margin-top: 15px;
+  color: #ffffff;
+}
+footer .fab {
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 5px;
+}
+footer a:hover .fab {
+  color: #cccccc;
+}
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+/* Left Column */
+#left-column {
+  padding-right: 0;
+}
+.portfolio-info {
+  background-color: #ffffff;
+  padding-top: 10px;
+  font-size: 15px;
+}
+.portfolio-info .glyphicon {
+  font-size: 15px;
+  color: #009688;
+  padding-right: 15px;
+}
+.portfolio-info .progress-bar {
+  background-color: #009688;
+}
+
+/* Right Column */
+.portfolio-content {
+  background-color: #ffffff;
+  padding-top: 10px;
+}
+
+/* Home Page Content */
+.projects {
+  text-align: center;
+}
+.projects .thumbnail:hover {
+  background-color: #009688;
+}
+.projects .thumbnail:hover .caption {
+  color: #ffffff;
+}
+.projects .thumbnail:hover a {
+  text-decoration: none;
 }
