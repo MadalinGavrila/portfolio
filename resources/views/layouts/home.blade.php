@@ -16,7 +16,7 @@
     <div class="container-fluid" id="body">
         <div class="row">
             <div class="col-sm-3" id="left-column">
-                <img src="images/eu.png" class="img-responsive" style="width:100%" alt="Image">
+                <img src="images/eu.png" class="img-responsive portfolio-photo" alt="Image">
                 <div class="portfolio-info container col-sm-12">
                     <p><span class="glyphicon glyphicon-user"></span> Gavrila Madalin</p>
                     <p><span class="glyphicon glyphicon-briefcase"></span> Web Developer</p>

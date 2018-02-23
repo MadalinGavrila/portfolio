@@ -42,6 +42,9 @@ footer a:hover .fab {
 #left-column {
   padding-right: 0;
 }
+.portfolio-photo {
+  width: 100%;
+}
 .portfolio-info {
   background-color: #ffffff;
   padding-top: 10px;
@@ -65,6 +68,9 @@ footer a:hover .fab {
 /* Home Page Content */
 .projects {
   text-align: center;
+}
+.project-photo {
+  width: 100%;
 }
 .projects .thumbnail:hover {
   background-color: #009688;

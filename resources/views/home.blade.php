@@ -11,7 +11,7 @@
             <p>Online-Shop</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
@@ -22,7 +22,7 @@
             <p>Blog</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
@@ -33,7 +33,7 @@
             <p>CMS</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
@@ -44,7 +44,7 @@
             <p>Framework</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
@@ -58,7 +58,7 @@
             <p>Online-Shop</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
@@ -69,7 +69,7 @@
             <p>Blog</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
@@ -80,7 +80,7 @@
             <p>CMS</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
@@ -91,7 +91,7 @@
             <p>Framework</p>
             <div class="thumbnail">
                 <a href="">
-                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" alt="Image" style="width:100%">
+                    <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive project-photo" alt="Image">
                     <div class="caption">
                         <p>View Project</p>
                     </div>
