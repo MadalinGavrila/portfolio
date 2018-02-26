@@ -9,7 +9,7 @@
     <div class="col-sm-6 col-sm-offset-3">
 
         @if(session('status'))
-            <div class="alert alert-success">
+            <div class="alert alert-success text-center">
                 {{session('status')}}
             </div>
         @endif

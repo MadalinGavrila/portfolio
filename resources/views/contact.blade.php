@@ -7,6 +7,13 @@
     <h3 class="text-center">Contact Me</h3>
 
     <div class="portfolio-contact col-sm-6 col-sm-offset-3">
+
+        @if(session('contact_mail'))
+            <div class="alert alert-success text-center">
+                {{session('contact_mail')}}
+            </div>
+        @endif
+
         <form method="POST" action="{{route('home.sendmail')}}">
             @csrf
 

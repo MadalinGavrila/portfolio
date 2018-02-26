@@ -33,6 +33,8 @@ class HomeController extends Controller
             $message->to('madalin.gavrila13@yahoo.com', 'Madalin Gavrila')->subject('Contact');
         });
 
+        $request->session()->flash('contact_mail', 'Your email was sent !');
+
         return redirect('/contact');
     }
 
