@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 
     @yield('styles')
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 <body>
 
@@ -79,6 +87,11 @@
                                     <li><a href="{{route('register')}}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
                                     <li><a href="{{route('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                 @else
+
+                                    @if(Auth::user()->role->name == 'admin')
+                                        <li><a href="{{route('admin')}}"><span class="glyphicon glyphicon-user"></span> {{Auth::user()->username}}</a></li>
+                                    @endif
+
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
                                     <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
                                         @csrf

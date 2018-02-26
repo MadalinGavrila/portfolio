@@ -18,3 +18,26 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/contact', 'HomeController@contact')->name('home.contact');
 
 Route::post('/sendmail', 'HomeController@sendMail')->name('home.sendmail');
+
+
+Route::get('/admin', 'AdminController@index')->name('admin');
+
+Route::resource('admin/skills', 'AdminSkillsController', ['names'=>[
+    'index'=>'admin.skills.index',
+    'create'=>'admin.skills.create',
+    'store'=>'admin.skills.store',
+    'edit'=>'admin.skills.edit',
+    'update'=>'admin.skills.update',
+    'show'=>'admin.skills.show',
+    'destroy'=>'admin.skills.destroy'
+]]);
+
+Route::resource('admin/users', 'AdminUsersController', ['names'=>[
+    'index'=>'admin.users.index',
+    'create'=>'admin.users.create',
+    'store'=>'admin.users.store',
+    'edit'=>'admin.users.edit',
+    'update'=>'admin.users.update',
+    'show'=>'admin.users.show',
+    'destroy'=>'admin.users.destroy'
+]]);

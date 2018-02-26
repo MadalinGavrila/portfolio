@@ -21,6 +21,14 @@ mix.styles([
 
 ], 'public/css/libs.css');
 
+mix.styles([
+
+    'resources/assets/css/libs/bootstrap.min.css',
+    'resources/assets/css/libs/fontawesome-all.min.css',
+    'resources/assets/css/libs/sb-admin.css'
+
+], 'public/css/libs-admin.css');
+
 mix.scripts([
 
     'resources/assets/js/libs/jquery-3.3.1.min.js',
