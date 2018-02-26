@@ -16,7 +16,7 @@
     <div class="container-fluid" id="body">
         <div class="row">
             <div class="col-sm-3" id="left-column">
-                <img src="images/eu.png" class="img-responsive portfolio-photo" alt="Image">
+                <img src="/images/eu.png" class="img-responsive portfolio-photo" alt="Image">
                 <div class="portfolio-info container col-sm-12">
                     <p><span class="glyphicon glyphicon-user"></span> Gavrila Madalin</p>
                     <p><span class="glyphicon glyphicon-briefcase"></span> Web Developer</p>
@@ -68,15 +68,22 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="">Home</a>
+                            <a class="navbar-brand" href="{{route('home')}}">Home</a>
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="">Contact</a></li>
+                                <li><a href="{{route('home.contact')}}">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href=""><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                                <li><a href=""><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                @guest
+                                    <li><a href="{{route('register')}}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                                    <li><a href="{{route('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                @else
+                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                                    <form id="logout-form" action="{{route('logout')}}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                @endguest
                             </ul>
                         </div>
                     </div>
@@ -92,7 +99,7 @@
         <p>Contact me on social media</p>
 
         <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></i></a>
+        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
 
         <p>Madalin Gavrila</p>
     </footer>

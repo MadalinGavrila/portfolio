@@ -103,3 +103,15 @@ footer a:hover .fab {
   text-decoration: none;
 }
 
+/* Contact Page Content */
+
+.portfolio-contact .fas {
+  margin-right: 5px;
+}
+
+/* Errors */
+
+.errors {
+  color: red;
+}
+

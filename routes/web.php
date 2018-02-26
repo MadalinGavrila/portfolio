@@ -11,4 +11,10 @@
 |
 */
 
-Route::get('/', ['as'=>'home', 'uses'=>'HomeController@index']);
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/contact', 'HomeController@contact')->name('home.contact');
+
+Route::post('/sendmail', 'HomeController@sendMail')->name('home.sendmail');
