@@ -74,10 +74,10 @@
                     <a href="javascript:;" data-toggle="collapse" data-target="#projects-link"><i class="fas fa-briefcase"></i> Projects <i class="fa fa-fw fa-caret-down"></i></a>
                     <ul id="projects-link" class="collapse">
                         <li>
-                            <a href="">All Projects</a>
+                            <a href="{{route('admin.projects.index')}}">All Projects</a>
                         </li>
                         <li>
-                            <a href="">Create Project</a>
+                            <a href="{{route('admin.projects.create')}}">Create Project</a>
                         </li>
                     </ul>
                 </li>

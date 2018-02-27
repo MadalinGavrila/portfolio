@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email', 'password', 'role_id'
+        'name', 'username', 'email', 'password', 'role_id', 'photo_id', 'address', 'phone'
     ];
 
     /**
@@ -27,12 +27,24 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function checkRole($role) {
+        if($this->role->name == $role) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function role() {
         return $this->belongsTo('App\Role');
     }
 
     public function skills() {
         return $this->hasMany('App\Skill');
+    }
+
+    public function projects() {
+        return $this->hasMany('App\Project');
     }
 
 }

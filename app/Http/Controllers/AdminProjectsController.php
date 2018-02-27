@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class AdminUsersController extends Controller
+class AdminProjectsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $projects = Project::all();
 
-        return view('admin.users.index', compact('users'));
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -26,7 +27,7 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
@@ -37,7 +38,16 @@ class AdminUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required',
+            'url' => 'required'
+        ]);
+
+        $user = Auth::user();
+
+        $user->projects()->create($request->all());
+
+        return redirect('/admin/projects');
     }
 
     /**
@@ -59,9 +69,9 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $project = Project::findOrFail($id);
 
-        return view('admin.users.edit', compact('user'));
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -74,14 +84,13 @@ class AdminUsersController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255'
+            'name' => 'required',
+            'url' => 'required'
         ]);
 
-        User::findOrFail($id)->update($request->all());
+        Auth::user()->projects()->whereId($id)->first()->update($request->all());
 
-        return redirect('/admin/users');
+        return redirect('/admin/projects');
     }
 
     /**
@@ -92,8 +101,8 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        User::findOrFail($id)->delete();
+        Project::findOrFail($id)->delete();
 
-        return redirect('/admin/users');
+        return redirect('/admin/projects');
     }
 }
