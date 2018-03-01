@@ -9,11 +9,16 @@
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
 
-            {!! Form::open(['method'=>'POST', 'action'=>'AdminProjectsController@store']) !!}
+            {!! Form::open(['method'=>'POST', 'action'=>'AdminProjectsController@store', 'files'=>true]) !!}
 
             <div class="form-group">
                 {!! Form::label('name', 'Name:') !!}
                 {!! Form::text('name', null, ['class'=>'form-control']) !!}
+            </div>
+
+            <div class="form-group">
+                {!! Form::label('photo_id', 'Photo:') !!}
+                {!! Form::file('photo_id', null, ['class'=>'form-control']) !!}
             </div>
 
             <div class="form-group">

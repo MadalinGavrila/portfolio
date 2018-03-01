@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Photo;
-use App\Role;
-use App\User;
 use Illuminate\Http\Request;
 
-class AdminUsersController extends Controller
+class AdminPhotosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,9 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $photos = Photo::all();
 
-        return view('admin.users.index', compact('users'));
+        return view('admin.photos.index', compact('photos'));
     }
 
     /**
@@ -61,11 +59,7 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
-
-        $roles = Role::pluck('name', 'id')->all();
-
-        return view('admin.users.edit', compact('user', 'roles'));
+        //
     }
 
     /**
@@ -77,35 +71,7 @@ class AdminUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255'
-        ]);
-
-        $user = User::findOrFail($id);
-
-        if(trim($request->password) == '') {
-            $input = $request->except('password');
-        } else {
-            $input = $request->all();
-
-            $input['password'] = bcrypt($request->password);
-        }
-
-        if($file = $request->file('photo_id')) {
-            $name = time() . $file->getClientOriginalName();
-
-            $file->move('images', $name);
-
-            $photo = Photo::create(['file'=>$name]);
-
-            $input['photo_id'] = $photo->id;
-        }
-
-        $user->update($input);
-
-        return redirect('/admin/users');
+        //
     }
 
     /**
@@ -116,16 +82,12 @@ class AdminUsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
+        $photo = Photo::findOrFail($id);
 
-        if($user->photo) {
-            unlink(public_path() . $user->photo->file);
+        unlink(public_path() . $photo->file);
 
-            $user->photo()->delete();
-        }
+        $photo->delete();
 
-        $user->delete();
-
-        return redirect('/admin/users');
+        return redirect('/admin/photos');
     }
 }

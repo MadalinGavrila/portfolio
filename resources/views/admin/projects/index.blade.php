@@ -24,7 +24,7 @@
                 @foreach($projects as $project)
                     <tr>
                         <td>{{$project->id}}</td>
-                        <td>{{$project->user->username}}</td>
+                        <td>{{$project->user ? $project->user->username : 'No User'}}</td>
                         <td><a href="{{route('admin.projects.edit', $project->id)}}">{{$project->name}}</a></td>
                         <td><a href="{{$project->url}}" target="_blank">View Project</a></td>
                         <td>{{$project->created_at->diffForHumans()}}</td>

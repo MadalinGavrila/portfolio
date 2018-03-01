@@ -24,7 +24,7 @@
                 @foreach($skills as $skill)
                     <tr>
                         <td>{{$skill->id}}</td>
-                        <td>{{$skill->user->username}}</td>
+                        <td>{{$skill->user ? $skill->user->username : 'No User'}}</td>
                         <td><a href="{{route('admin.skills.edit', $skill->id)}}">{{$skill->name}}</a></td>
                         <td>{{$skill->progress}}</td>
                         <td>{{$skill->created_at->diffForHumans()}}</td>

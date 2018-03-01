@@ -82,7 +82,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href=""><i class="fas fa-images"></i></i> Photos</a>
+                    <a href="{{route('admin.photos.index')}}"><i class="fas fa-images"></i></i> Photos</a>
                 </li>
             </ul>
         </div>

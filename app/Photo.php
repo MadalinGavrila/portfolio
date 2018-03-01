@@ -9,4 +9,18 @@ class Photo extends Model
 
     protected $fillable = ['file'];
 
+    protected $uploads = '/images/';
+
+    public function getFileAttribute($photo) {
+        return $this->uploads . $photo;
+    }
+
+    public function user() {
+        return $this->hasOne('App\User');
+    }
+
+    public function project() {
+        return $this->hasOne('App\Project');
+    }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use App\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -43,9 +44,21 @@ class AdminProjectsController extends Controller
             'url' => 'required'
         ]);
 
+        $input = $request->all();
+
         $user = Auth::user();
 
-        $user->projects()->create($request->all());
+        if($file = $request->file('photo_id')) {
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
+
+        $user->projects()->create($input);
 
         return redirect('/admin/projects');
     }
@@ -88,7 +101,19 @@ class AdminProjectsController extends Controller
             'url' => 'required'
         ]);
 
-        Auth::user()->projects()->whereId($id)->first()->update($request->all());
+        $input = $request->all();
+
+        if($file = $request->file('photo_id')) {
+            $name = time() . $file->getClientOriginalName();
+
+            $file->move('images', $name);
+
+            $photo = Photo::create(['file'=>$name]);
+
+            $input['photo_id'] = $photo->id;
+        }
+
+        Auth::user()->projects()->whereId($id)->first()->update($input);
 
         return redirect('/admin/projects');
     }
@@ -101,7 +126,15 @@ class AdminProjectsController extends Controller
      */
     public function destroy($id)
     {
-        Project::findOrFail($id)->delete();
+        $project = Project::findOrFail($id);
+
+        if($project->photo) {
+            unlink(public_path() . $project->photo->file);
+
+            $project->photo()->delete();
+        }
+
+        $project->delete();
 
         return redirect('/admin/projects');
     }
