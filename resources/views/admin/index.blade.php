@@ -85,7 +85,7 @@
                             <i class="fas fa-images fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
+                            <div class="huge">{{count($photos)}}</div>
                             <div>Photos</div>
                         </div>
                     </div>

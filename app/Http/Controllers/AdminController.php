@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Photo;
 use App\Project;
 use App\Skill;
 use App\User;
@@ -14,8 +15,9 @@ class AdminController extends Controller
         $users = User::all();
         $skills = Skill::all();
         $projects = Project::all();
+        $photos = Photo::all();
 
-        return view('admin.index', compact('users', 'skills', 'projects'));
+        return view('admin.index', compact('users', 'skills', 'projects', 'photos'));
     }
 
 }

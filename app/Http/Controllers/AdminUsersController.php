@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -61,7 +62,9 @@ class AdminUsersController extends Controller
     {
         $user = User::findOrFail($id);
 
-        return view('admin.users.edit', compact('user'));
+        $roles = Role::pluck('name', 'id')->all();
+
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
