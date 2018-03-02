@@ -40,8 +40,8 @@ class AdminProjectsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'url' => 'required'
+            'name' => 'required|max:50',
+            'url' => 'required|max:100'
         ]);
 
         $input = $request->all();
@@ -97,8 +97,8 @@ class AdminProjectsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'url' => 'required'
+            'name' => 'required|max:50',
+            'url' => 'required|max:100'
         ]);
 
         $input = $request->all();

@@ -78,9 +78,11 @@ class AdminUsersController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:255',
-            'username' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255'
+            'name' => 'required|string|max:50',
+            'username' => 'required|string|max:50',
+            'email' => 'required|string|email|max:255',
+            'address' => 'max:100',
+            'phone' => 'max:20'
         ]);
 
         $user = User::findOrFail($id);

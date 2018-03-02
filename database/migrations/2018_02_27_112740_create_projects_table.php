@@ -17,8 +17,8 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->integer('photo_id')->unsigned()->index()->nullable();;
-            $table->string('name');
-            $table->string('url');
+            $table->string('name', 50);
+            $table->string('url', 100);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

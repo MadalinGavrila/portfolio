@@ -39,7 +39,7 @@ class AdminSkillsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'name' => 'required|max:50',
             'progress' => 'required|digits_between:1,3'
         ]);
 
@@ -84,8 +84,8 @@ class AdminSkillsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
-            'progress' => 'required'
+            'name' => 'required|max:50',
+            'progress' => 'required|digits_between:1,3'
         ]);
 
         Auth::user()->skills()->whereId($id)->first()->update($request->all());
