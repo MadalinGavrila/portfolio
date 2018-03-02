@@ -49,6 +49,12 @@
             </tbody>
         </table>
 
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-5">
+                {{$photos->links()}}
+            </div>
+        </div>
+
     @else
 
         <h1 class="text-center">No Photos</h1>

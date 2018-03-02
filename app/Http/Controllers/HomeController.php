@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
@@ -9,11 +10,19 @@ class HomeController extends Controller
 {
 
     public function index() {
-        return view('home');
+        $user = User::where('role_id', 2)->first();
+
+        if($user) {
+            $projects = $user->projects()->paginate(8);
+        }
+
+        return view('home', compact('user', 'projects'));
     }
 
     public function contact() {
-        return view('contact');
+        $user = User::where('role_id', 2)->first();
+
+        return view('contact', compact('user'));
     }
 
     public function sendMail(Request $request) {

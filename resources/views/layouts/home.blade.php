@@ -24,48 +24,26 @@
     <div class="container-fluid" id="body">
         <div class="row">
             <div class="col-sm-3" id="left-column">
-                <img src="/images/eu.png" class="img-responsive portfolio-photo" alt="Image">
-                <div class="portfolio-info container col-sm-12">
-                    <p><span class="glyphicon glyphicon-user"></span> Gavrila Madalin</p>
-                    <p><span class="glyphicon glyphicon-briefcase"></span> Web Developer</p>
-                    <p><span class="glyphicon glyphicon-home"></span> Bucharest</p>
-                    <p><span class="glyphicon glyphicon-envelope"></span> madalin.gavrila13@yahoo.com</p>
-                    <p><span class="glyphicon glyphicon-earphone"></span> 0747854311</p>
-                    <hr />
-                    <p><span class="glyphicon glyphicon-asterisk"></span> <strong>Skills</strong></p>
-                    <p>HTML</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:90%">90%</div>
+                @if($user)
+                    <img src="{{$user->photo ? $user->photo->file : $user->photoPlaceholder()}}" class="img-responsive portfolio-photo" alt="Image">
+                    <div class="portfolio-info container col-sm-12">
+                        <p><span class="glyphicon glyphicon-user"></span> {{$user->name}}</p>
+                        <p><span class="glyphicon glyphicon-briefcase"></span> Web Developer</p>
+                        <p><span class="glyphicon glyphicon-home"></span> {{$user->address ? $user->address : 'No Address'}}</p>
+                        <p><span class="glyphicon glyphicon-envelope"></span> {{$user->email}}</p>
+                        <p><span class="glyphicon glyphicon-earphone"></span> {{$user->phone ? $user->phone : 'No Phone'}}</p>
+                        <hr />
+                        <p><span class="glyphicon glyphicon-asterisk"></span> <strong>Skills</strong></p>
+                        @foreach($user->skills as $skill)
+                            <p>{{$skill->name}}</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:{{$skill->progress}}%">{{$skill->progress}}%</div>
+                            </div>
+                        @endforeach
                     </div>
-                    <p>CSS</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:90%">90%</div>
-                    </div>
-                    <p>PHP</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:90%">90%</div>
-                    </div>
-                    <p>MySQL</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:90%">90%</div>
-                    </div>
-                    <p>Laravel</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:50%">50%</div>
-                    </div>
-                    <p>GIT</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:50%">50%</div>
-                    </div>
-                    <p>JavaScript</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div>
-                    </div>
-                    <p>jQuery</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:30%">30%</div>
-                    </div>
-                </div>
+                @else
+                    <h3 class="text-center">No Info</h3>
+                @endif
             </div>
             <div class="col-sm-9">
                 <nav class="navbar navbar-inverse">
@@ -111,7 +89,7 @@
     <footer class="container-fluid text-center">
         <p>Contact me on social media</p>
 
-        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.facebook.com/madalin.gavrila13" target="_blank"><i class="fab fa-facebook"></i></a>
         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
 
         <p>Madalin Gavrila</p>

@@ -15,7 +15,7 @@ class AdminSkillsController extends Controller
      */
     public function index()
     {
-        $skills = Skill::all();
+        $skills = Skill::paginate(6);
 
         return view('admin.skills.index', compact('skills'));
     }

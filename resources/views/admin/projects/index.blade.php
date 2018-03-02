@@ -45,6 +45,12 @@
             </tbody>
         </table>
 
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-5">
+                {{$projects->links()}}
+            </div>
+        </div>
+
     @else
 
         <h1 class="text-center">No Projects</h1>
