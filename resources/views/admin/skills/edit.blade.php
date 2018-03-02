@@ -6,6 +6,12 @@
 
     <h1 class="page-header">Edit Skill</h1>
 
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            @include('includes.form_error')
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
 
@@ -27,12 +33,6 @@
 
             {!! Form::close() !!}
 
-        </div>
-    </div>
-
-    <div class="col-sm-6 col-sm-offset-3">
-        <div class="row">
-            @include('includes.form_error')
         </div>
     </div>
 

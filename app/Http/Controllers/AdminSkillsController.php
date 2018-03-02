@@ -40,7 +40,7 @@ class AdminSkillsController extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'progress' => 'required'
+            'progress' => 'required|digits_between:1,3'
         ]);
 
         $user = Auth::user();

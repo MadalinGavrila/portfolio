@@ -23,7 +23,7 @@
                 @foreach($photos as $photo)
                     <tr>
                         <td>{{$photo->id}}</td>
-                        <td><img height="50" src="{{$photo->file ? $photo->file : 'http://placehold.it/400x400'}}" alt="IMAGE" /></td>
+                        <td><img height="50" src="{{$photo->file}}" alt="IMAGE" /></td>
                         <td>
                             @if($photo->user)
                                 User / {{$photo->user->username}}

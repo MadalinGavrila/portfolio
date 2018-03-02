@@ -6,6 +6,12 @@
 
     <h1 class="page-header">Create Projects</h1>
 
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+            @include('includes.form_error')
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
 
@@ -22,7 +28,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('url', 'Link:') !!}
+                {!! Form::label('url', 'Url:') !!}
                 {!! Form::text('url', null, ['class'=>'form-control']) !!}
             </div>
 
@@ -32,12 +38,6 @@
 
             {!! Form::close() !!}
 
-        </div>
-    </div>
-
-    <div class="col-sm-6 col-sm-offset-3">
-        <div class="row">
-            @include('includes.form_error')
         </div>
     </div>
 

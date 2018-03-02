@@ -27,6 +27,8 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $uploads = '/images/';
+
     public function checkRole($role) {
         if($this->role->name == $role) {
             return true;
@@ -49,6 +51,10 @@ class User extends Authenticatable
 
     public function projects() {
         return $this->hasMany('App\Project');
+    }
+
+    public function photoPlaceholder() {
+        return $this->uploads . "placeholder_user.jpg";
     }
 
 }
