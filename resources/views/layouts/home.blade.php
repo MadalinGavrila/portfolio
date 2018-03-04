@@ -28,7 +28,7 @@
                     <img src="{{$user->photo ? $user->photo->file : $user->photoPlaceholder()}}" class="img-responsive portfolio-photo" alt="Image">
                     <div class="portfolio-info container col-sm-12">
                         <p><span class="glyphicon glyphicon-user"></span> {{$user->name}}</p>
-                        <p><span class="glyphicon glyphicon-briefcase"></span> Web Developer</p>
+                        <p><span class="glyphicon glyphicon-briefcase"></span> {{$user->job ? $user->job : 'No Job'}}</p>
                         <p><span class="glyphicon glyphicon-home"></span> {{$user->address ? $user->address : 'No Address'}}</p>
                         <p><span class="glyphicon glyphicon-envelope"></span> {{$user->email}}</p>
                         <p><span class="glyphicon glyphicon-earphone"></span> {{$user->phone ? $user->phone : 'No Phone'}}</p>
@@ -58,12 +58,12 @@
                         </div>
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="{{route('home.contact')}}">Contact</a></li>
+                                <li class="{{Request::is('contact') ? 'active' : ''}}"><a href="{{route('home.contact')}}">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 @guest
-                                    <li><a href="{{route('register')}}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                                    <li><a href="{{route('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                                    <li class="{{Request::is('register') ? 'active' : ''}}"><a href="{{route('register')}}"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                                    <li class="{{Request::is('login') ? 'active' : ''}}"><a href="{{route('login')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                                 @else
 
                                     @if(Auth::user()->role->name == 'admin')
@@ -90,7 +90,7 @@
         <p>Contact me on social media</p>
 
         <a href="https://www.facebook.com/madalin.gavrila13" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/madalin-gavrila" target="_blank"><i class="fab fa-linkedin"></i></a>
 
         <p>Madalin Gavrila</p>
     </footer>

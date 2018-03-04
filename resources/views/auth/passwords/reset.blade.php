@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.other')
 
 @section('title', 'Reset Password')
 

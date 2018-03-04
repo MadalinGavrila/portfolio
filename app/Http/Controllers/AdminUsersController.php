@@ -81,6 +81,7 @@ class AdminUsersController extends Controller
             'name' => 'required|string|max:50',
             'username' => 'required|string|max:50',
             'email' => 'required|string|email|max:255',
+            'job' => 'max:50',
             'address' => 'max:100',
             'phone' => 'max:20'
         ]);

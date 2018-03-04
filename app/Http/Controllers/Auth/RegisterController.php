@@ -70,4 +70,11 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password'])
         ]);
     }
+
+    public function showRegistrationForm() {
+        $user = User::where('role_id', 2)->first();
+
+        return view('auth.register', compact('user'));
+    }
+
 }

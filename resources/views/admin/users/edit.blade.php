@@ -43,6 +43,11 @@
                 </div>
 
                 <div class="form-group">
+                    {!! Form::label('job', 'Job:') !!}
+                    {!! Form::text('job', null, ['class'=>'form-control']) !!}
+                </div>
+
+                <div class="form-group">
                     {!! Form::label('address', 'Address:') !!}
                     {!! Form::text('address', null, ['class'=>'form-control']) !!}
                 </div>

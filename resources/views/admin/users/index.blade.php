@@ -17,6 +17,7 @@
                 <th>Role</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Job</th>
                 <th>Address</th>
                 <th>Phone</th>
                 <th>Created</th>
@@ -33,6 +34,7 @@
                     <td>{{$user->role->name}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                    <td>{{$user->job ? $user->job : 'No Job'}}</td>
                     <td>{{$user->address ? $user->address : 'No Address'}}</td>
                     <td>{{$user->phone ? $user->phone : 'No Phone'}}</td>
                     <td>{{$user->created_at->diffForHumans()}}</td>
