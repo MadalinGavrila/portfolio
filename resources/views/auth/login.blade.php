@@ -28,12 +28,15 @@
                 <label><input type="checkbox" name="remember" {{old('remember') ? 'checked' : ''}}> Remember me</label>
             </div>
 
-            <div class="form-group col-sm-6 col-sm-offset-3">
-                <button type="submit" class="col-sm-12 btn btn-primary">Login</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
 
-                <a class="col-sm-12 btn btn-link" href="{{route('password.request')}}">
-                    Forgot Your Password?
-                </a>
+
+                <div class="text-center">
+                    <a class="btn btn-link" href="{{route('password.request')}}">
+                        Forgot Your Password?
+                    </a>
+                </div>
             </div>
         </form>
     </div>

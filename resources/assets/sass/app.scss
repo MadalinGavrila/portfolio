@@ -42,6 +42,14 @@ footer a:hover .fab {
 #left-column {
   padding-right: 0;
 }
+
+/* For Mobile Phones */
+@media only screen and (max-width: 768px) {
+    #left-column {
+        padding-right: 15px;
+    }
+}
+
 .portfolio-photo {
   width: 100%;
 }

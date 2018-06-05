@@ -35,11 +35,11 @@
                 <label for="message">Message:
                     <span class="errors">{{$errors->has('message') ? $errors->first('message') : ''}}</span>
                 </label>
-                <textarea name="message" class="form-control" rows="3" id="message">{{old('message')}}</textarea>
+                <textarea style="resize: vertical;" name="message" class="form-control" rows="3" id="message">{{old('message')}}</textarea>
             </div>
 
-            <div class="form-group col-sm-6 col-sm-offset-3">
-                <button type="submit" class="col-sm-12 btn btn-primary"><i class="fas fa-paper-plane"></i>Send Message</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-paper-plane"></i>Send Message</button>
             </div>
         </form>
     </div>

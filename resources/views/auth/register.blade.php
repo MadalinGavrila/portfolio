@@ -43,8 +43,8 @@
                 <input type="password" name="password_confirmation" class="form-control" id="password_confirmation">
             </div>
 
-            <div class="form-group col-sm-6 col-sm-offset-3">
-                <button type="submit" class="col-sm-12 btn btn-primary">Register</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
             </div>
         </form>
     </div>

@@ -24,8 +24,8 @@
                 <input type="text" name="email" value="{{old('email')}}" class="form-control" id="email">
             </div>
 
-            <div class="form-group col-sm-6 col-sm-offset-3">
-                <button type="submit" class="col-sm-12 btn btn-primary">Send Password Reset Link</button>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Send Password Reset Link</button>
             </div>
         </form>
     </div>
