@@ -13,7 +13,7 @@ class HomeController extends Controller
         $user = User::where('role_id', 2)->first();
 
         if($user) {
-            $projects = $user->projects()->paginate(8);
+            $projects = $user->projects()->orderBy('created_at', 'desc')->paginate(8);
         }
 
         return view('home', compact('user', 'projects'));
